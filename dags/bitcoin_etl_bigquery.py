@@ -12,7 +12,7 @@ import pandas as pd
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
 
 # ====== CONFIG ======
-GCP_PROJECT  = "hardy-messenger-229417"      # e.g., "my-gcp-project"
+GCP_PROJECT  = "teste-enap"      # e.g., "my-gcp-project"
 BQ_DATASET   = "crypto"                    # e.g., "crypto"
 BQ_TABLE     = "bitcoin_history_hourly"    # e.g., "bitcoin_history_hourly"
 BQ_LOCATION  = "US"                        # dataset location: "US" or "EU"
@@ -21,7 +21,7 @@ GCP_CONN_ID  = "google_cloud_default"      # Airflow connection with a SA that c
 
 DEFAULT_ARGS = {
     "email_on_failure": True,
-    "owner": "Alex Lopes,Open in Cloud IDE",
+    "owner": "Alexandre,Open in Cloud IDE",
 }
 
 @task
