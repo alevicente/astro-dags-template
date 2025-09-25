@@ -7,6 +7,7 @@ from datetime import timedelta
 import pendulum
 import requests
 import pandas as pd
+import time
 
 # We'll use the hook only to fetch application credentials from your Airflow GCP connection
 from airflow.providers.google.cloud.hooks.bigquery import BigQueryHook
