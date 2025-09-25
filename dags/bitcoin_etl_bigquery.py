@@ -24,7 +24,7 @@ DEFAULT_ARGS = {
     "owner": "Alexandre,Open in Cloud IDE",
 }
 
-@task
+@task(retries=3, retry_delay=timedelta(minutes=5))
 def fetch_and_to_gbq():
     """
     Fetch hourly BTC data for the 'yesterday' window using CoinGecko and load it to BigQuery
@@ -45,6 +45,10 @@ def fetch_and_to_gbq():
 
     r = requests.get(url, params=params, timeout=30)
     r.raise_for_status()
+
+    # Limita chamadas: pausa de 1 a 2 segundos para não exceder limite da API
+    time.sleep(2)
+    
     payload = r.json()
 
     prices = payload.get("prices", [])
