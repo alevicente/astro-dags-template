@@ -113,6 +113,7 @@ def fetch_and_to_gbq():
     owner_links={
         "Alex Lopes": "mailto:alexlopespereira@gmail.com",
         "Open in Cloud IDE": "https://cloud.astronomer.io/cm3webulw15k701npm2uhu77t/cloud-ide/cm42rbvn10lqk01nlco70l0b8/cm44gkosq0tof01mxajutk86g",
+        max_active_runs=1,
     },
     tags=["bitcoin", "etl", "coingecko", "bigquery", "pandas-gbq"],
 )
